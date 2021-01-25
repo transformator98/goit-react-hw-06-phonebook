@@ -1,0 +1,30 @@
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.name {
+  text-transform: lowercase;
+  font-size: 20px;
+  font-weight: 600;
+  max-width: 200px;
+}
+
+.name:first-letter {
+  text-transform: uppercase;
+}
+.number {
+  max-width: 200px;
+  justify-content: center;
+}
+.button {
+  cursor: pointer;
+  background-color: rgb(248, 149, 149);
+  border: none;
+  border-radius: 4px;
+  border: 1px solid grey;
+  width: 100px;
+  padding: 5px;
+  max-width: 200px;
+}
