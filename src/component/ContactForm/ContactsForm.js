@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import phonebookAction from '../../redux/phonebook/phonebook-actions';
 
 import s from './ContactsForm.module.css';
 
-export default function ContactsForm({ onAddSubmit, onRepeat }) {
+function ContactsForm({ onAddSubmit, onRepeat }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -66,7 +68,14 @@ export default function ContactsForm({ onAddSubmit, onRepeat }) {
     </form>
   );
 }
+
+const mapDispatchToProps = dispatch => ({
+  onSubmit: (name, number) =>
+    dispatch(phonebookAction.addContact(name, number)),
+});
+
 ContactsForm.propTypes = {
   name: PropTypes.string,
   number: PropTypes.number,
 };
+export default connect(null, mapDispatchToProps)(ContactsForm);

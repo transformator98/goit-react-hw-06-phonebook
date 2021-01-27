@@ -25,27 +25,27 @@ export default function App() {
     return repeatNameAndNumber;
   };
 
-  const addContact = (name, number) => {
-    const repeat = repeatContact(name, number);
-    if (name.length < 2) {
-      alert(`Текст должен быть не меньше 2 символов, сейчас ${name.length}`);
-      return;
-    }
+  // const addContact = (name, number) => {
+  //   const repeat = repeatContact(name, number);
+  //   if (name.length < 2) {
+  //     alert(`Текст должен быть не меньше 2 символов, сейчас ${name.length}`);
+  //     return;
+  //   }
 
-    if (number.length < 5) {
-      alert(`Номер должен быть не меньше 5 символов, сейчас ${number.length}`);
-      return;
-    }
-    const contact = {
-      id: uuidv4(),
-      name,
-      number,
-    };
+  //   if (number.length < 5) {
+  //     alert(`Номер должен быть не меньше 5 символов, сейчас ${number.length}`);
+  //     return;
+  //   }
+  //   const contact = {
+  //     id: uuidv4(),
+  //     name,
+  //     number,
+  //   };
 
-    repeat
-      ? alert(`${name} is already exist!`)
-      : setContacts(state => [contact, ...state]);
-  };
+  //   repeat
+  //     ? alert(`${name} is already exist!`)
+  //     : setContacts(state => [contact, ...state]);
+  // };
 
   const deleteContact = contactId => {
     setContacts(contacts.filter(contact => contact.id !== contactId));
@@ -65,7 +65,7 @@ export default function App() {
   return (
     <Container className="container">
       <h1>Phonebook</h1>
-      <ContactsForm onAddSubmit={addContact} onRepeat={repeatContact} />
+      <ContactsForm onRepeat={repeatContact} />
       <h2>Contact</h2>
       <Filter value={filter} onChange={changeFilter} />
 
