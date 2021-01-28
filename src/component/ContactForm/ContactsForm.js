@@ -72,8 +72,8 @@ function ContactsForm({ onAddSubmit, onRepeat }) {
 const mapDispatchToProps = dispatch => ({
   onAddSubmit: (name, number) =>
     dispatch(phonebookAction.addContact(name, number)),
-  onRepeat: (name, number) =>
-    dispatch(phonebookAction.addContact(name, number)),
+  // onRepeat: (name, number) =>
+  //   dispatch(phonebookAction.repeatContact(name, number)),
 });
 
 // ContactsForm.propTypes = {
