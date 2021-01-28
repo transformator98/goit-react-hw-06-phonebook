@@ -70,12 +70,14 @@ export default function App() {
       // onRepeat={repeatContact}
       />
       <h2>Contact</h2>
-      {/* <Filter value={filter} onChange={changeFilter} /> */}
+      <Filter
+      // value={filter} onChange={changeFilter}
+      />
 
-      {/* <ContactList
-        contacts={getVisibleContact()}
-        onDeleteContact={deleteContact}
-      /> */}
+      <ContactList
+      // contacts={getVisibleContact()}
+      // onDeleteContact={deleteContact}
+      />
     </Container>
   );
 }

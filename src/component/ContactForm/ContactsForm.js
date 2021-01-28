@@ -28,7 +28,7 @@ function ContactsForm({ onAddSubmit, onRepeat }) {
     event.preventDefault();
 
     onAddSubmit(name, number);
-    onRepeat(name, number);
+    // onRepeat(name, number);
 
     reset();
   };
@@ -76,8 +76,8 @@ const mapDispatchToProps = dispatch => ({
   //   dispatch(phonebookAction.repeatContact(name, number)),
 });
 
-// ContactsForm.propTypes = {
-//   name: PropTypes.string,
-//   number: PropTypes.number,
-// };
+ContactsForm.propTypes = {
+  // name: PropTypes.string,
+  // number: PropTypes.number,
+};
 export default connect(null, mapDispatchToProps)(ContactsForm);

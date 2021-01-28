@@ -27,9 +27,4 @@ const changeFilter = value => ({
   payload: value,
 });
 
-const repeatContact = value => ({
-  type: types.REPEAT_CONTACT,
-  payload: value,
-});
-
-export default { addContact, deleteContact, changeFilter, repeatContact };
+export default { addContact, deleteContact, changeFilter };
