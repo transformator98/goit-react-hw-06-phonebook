@@ -7,6 +7,7 @@ const rootReducer = combineReducers({
   phonebook: phonebookReducer,
 });
 
+// const store = createStore(rootReducer);
 const store = createStore(rootReducer, composeWithDevTools());
 
 export default store;

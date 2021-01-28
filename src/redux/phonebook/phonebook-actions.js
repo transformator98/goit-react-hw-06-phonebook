@@ -10,6 +10,13 @@ const addContact = (name, number) => ({
   },
 });
 
+// const repeatContact = (name, number) => ({
+//   type: types.REPEAT,
+//   payload:{
+// name, number
+// }
+// });
+
 const deleteContact = contactId => ({
   type: types.DELETE,
   payload: contactId,

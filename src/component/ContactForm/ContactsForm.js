@@ -70,12 +70,14 @@ function ContactsForm({ onAddSubmit, onRepeat }) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit: (name, number) =>
+  onAddSubmit: (name, number) =>
+    dispatch(phonebookAction.addContact(name, number)),
+  onRepeat: (name, number) =>
     dispatch(phonebookAction.addContact(name, number)),
 });
 
-ContactsForm.propTypes = {
-  name: PropTypes.string,
-  number: PropTypes.number,
-};
+// ContactsForm.propTypes = {
+//   name: PropTypes.string,
+//   number: PropTypes.number,
+// };
 export default connect(null, mapDispatchToProps)(ContactsForm);

@@ -8,22 +8,22 @@ import ContactList from './component/ContactList';
 import Container from './component/Container';
 
 export default function App() {
-  const [contacts, setContacts] = useState(() => {
-    return JSON.parse(window.localStorage.getItem('contacts')) ?? [];
-  });
+  // const [contacts, setContacts] = useState(() => {
+  //   return JSON.parse(window.localStorage.getItem('contacts')) ?? [];
+  // });
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
+  // }, [contacts]);
 
-  const repeatContact = (name, number) => {
-    const repeatNameAndNumber = !!contacts.find(
-      contact => contact.name === name || contact.number === number,
-    );
+  // const repeatContact = (name, number) => {
+  //   const repeatNameAndNumber = !!contacts.find(
+  //     contact => contact.name === name || contact.number === number,
+  //   );
 
-    return repeatNameAndNumber;
-  };
+  //   return repeatNameAndNumber;
+  // };
 
   // const addContact = (name, number) => {
   //   const repeat = repeatContact(name, number);
@@ -47,32 +47,35 @@ export default function App() {
   //     : setContacts(state => [contact, ...state]);
   // };
 
-  const deleteContact = contactId => {
-    setContacts(contacts.filter(contact => contact.id !== contactId));
-  };
-  const changeFilter = event => {
-    setFilter(event.target.value);
-  };
+  // const deleteContact = contactId => {
+  //   setContacts(contacts.filter(contact => contact.id !== contactId));
+  // };
+  // const changeFilter = event => {
+  //   setFilter(event.target.value);
+  // };
 
-  const getVisibleContact = () => {
-    const normalizeFilter = filter.toLowerCase();
+  // const getVisibleContact = () => {
+  //   const normalizeFilter = filter.toLowerCase();
 
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizeFilter),
-    );
-  };
+  //   return contacts.filter(contact =>
+  //     contact.name.toLowerCase().includes(normalizeFilter),
+  //   );
+  // };
 
   return (
     <Container className="container">
       <h1>Phonebook</h1>
-      <ContactsForm onRepeat={repeatContact} />
+      <ContactsForm
+      // onAddSubmit={addContact}
+      // onRepeat={repeatContact}
+      />
       <h2>Contact</h2>
-      <Filter value={filter} onChange={changeFilter} />
+      {/* <Filter value={filter} onChange={changeFilter} /> */}
 
-      <ContactList
+      {/* <ContactList
         contacts={getVisibleContact()}
         onDeleteContact={deleteContact}
-      />
+      /> */}
     </Container>
   );
 }
