@@ -24,9 +24,20 @@ ContactList.propTypes = {
   contacts: PropTypes.array,
   onDeleteContact: PropTypes.func,
 };
-const mapStateToProps = state => ({
-  contacts: state.phonebook.items,
-});
+
+const getVisibleContact = (allContacts, filter) => {
+  const normalizeFilter = filter.toLowerCase();
+
+  return allContacts.filter(contact =>
+    contact.name.toLowerCase().includes(normalizeFilter),
+  );
+};
+
+const mapStateToProps = state => {
+  const { filter, items } = state.contacts;
+  const visibleContact = getVisibleContact(items, filter);
+  return { contacts: visibleContact };
+};
 const mapDispatchToProps = dispatch => ({
   onDeleteContact: id => dispatch(phonebookAction.deleteContact(id)),
 });

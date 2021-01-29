@@ -14,16 +14,9 @@ Filter.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
 };
-// const getVisibleContact = () => {
-//   const normalizeFilter = filter.toLowerCase();
-
-//   return contacts.filter(contact =>
-//     contact.name.toLowerCase().includes(normalizeFilter),
-//   );
-// };
 
 const mapStateToProps = state => ({
-  value: state.phonebook.filter,
+  value: state.contacts.filter,
 });
 const mapDispatchToProps = dispatch => ({
   onChange: event => dispatch(phonebookAction.changeFilter(event.target.value)),

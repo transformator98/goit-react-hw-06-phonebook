@@ -10,13 +10,6 @@ const addContact = (name, number) => ({
   },
 });
 
-// const repeatContact = (name, number) => ({
-//   type: types.REPEAT,
-//   payload:{
-// name, number
-// }
-// });
-
 const deleteContact = contactId => ({
   type: types.DELETE,
   payload: contactId,
@@ -27,4 +20,5 @@ const changeFilter = value => ({
   payload: value,
 });
 
-export default { addContact, deleteContact, changeFilter };
+const contactActions = { addContact, deleteContact, changeFilter };
+export default contactActions;

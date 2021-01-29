@@ -24,17 +24,6 @@ const filter = (state = '', { type, payload }) => {
   }
 };
 
-// {
-//   contacts: {
-//     items: [],
-//     filter: ''
-//   }
-// }
-
-// const items = (state = [], action) => {
-//   return state;
-// };
-
 export default combineReducers({
   items,
   filter,

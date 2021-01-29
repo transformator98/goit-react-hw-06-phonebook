@@ -4,10 +4,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import phonebookReducer from './phonebook/phonebook-reducer';
 
 const rootReducer = combineReducers({
-  phonebook: phonebookReducer,
+  contacts: phonebookReducer,
 });
 
-// const store = createStore(rootReducer);
 const store = createStore(rootReducer, composeWithDevTools());
 
 export default store;

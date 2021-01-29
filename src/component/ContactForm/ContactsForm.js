@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
 import phonebookAction from '../../redux/phonebook/phonebook-actions';
 
 import s from './ContactsForm.module.css';
 
 function ContactsForm({ onAddSubmit, onRepeat }) {
+  // const items = useSelector(state.contacts.item);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -24,11 +26,15 @@ function ContactsForm({ onAddSubmit, onRepeat }) {
     }
   };
 
+  // const repeatContact = name => {
+  //   const repeatName = name.toLowerCase();
+  //   return items.find(contact => contact.name === repeatName);
+  // };
+
   const handleSubmit = event => {
     event.preventDefault();
 
     onAddSubmit(name, number);
-    // onRepeat(name, number);
 
     reset();
   };
@@ -72,12 +78,10 @@ function ContactsForm({ onAddSubmit, onRepeat }) {
 const mapDispatchToProps = dispatch => ({
   onAddSubmit: (name, number) =>
     dispatch(phonebookAction.addContact(name, number)),
-  // onRepeat: (name, number) =>
-  //   dispatch(phonebookAction.repeatContact(name, number)),
 });
 
 ContactsForm.propTypes = {
-  // name: PropTypes.string,
-  // number: PropTypes.number,
+  name: PropTypes.string,
+  number: PropTypes.number,
 };
 export default connect(null, mapDispatchToProps)(ContactsForm);
